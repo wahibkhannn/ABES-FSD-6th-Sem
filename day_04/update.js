@@ -12,23 +12,6 @@ const response = await writeFile(FILE, JSON.stringify(updatedStudents));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const updateStudent = async (FILE, id, updatedStudent) => {
     const students = await readFile(FILE);
     const updatedStudents = students.map(student => {
