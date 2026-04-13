@@ -1,0 +1,17 @@
+import { MongoClient } from "mongodb";
+
+const url = "mongodb+srv://wahibkhan7860_db_user:ckLN7vZjvkqYLgQJ@cluster1.vnzglyl.mongodb.net/?appName=Cluster1"; 
+const dbName = "mydatabase"; 
+
+let client;
+
+const dbConnect = async () => {
+    if (!client) {
+        client = new MongoClient(url);
+        await client.connect();
+        console.log("MongoDB Connected");
+    }
+    return client.db(dbName);
+};
+
+export default dbConnect;
